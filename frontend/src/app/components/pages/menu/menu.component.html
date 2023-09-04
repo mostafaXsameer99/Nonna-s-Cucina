@@ -1,0 +1,38 @@
+<app-search></app-search>
+<app-tags></app-tags>
+<app-not-found [visible]="!foods || !foods.length" notFoundMessage="Sorry, We Do Not Serve This "
+    resetLinkText="Reset Search" resetLinkRoute="/menu">
+</app-not-found>
+
+<ul>
+    <li *ngFor="let food of foods">
+        <a routerLink="/food/{{food.id}}">
+            <img [src]="food.imageUrl" alt="dish.name">
+            <div class="content">
+                <!-- Name -->
+                <div class="name">{{food.name}}</div>
+                <!-- fav icon -->
+                <span class="favorite {{food.favorite?'':'not'}}">❤</span>
+
+                <div class="product-item-footer">
+                    <!-- origin -->
+                    <!-- may delete it later -->
+                    <!-- <div class="origins">
+                        <span *ngFor="let origin of food.origins">{{origin}}</span>
+                    </div> -->
+                    <div class="price">{{food.price | currency}}</div>
+
+                    <!-- cook-time -->
+                    <div class="cook-time">
+                        <span>🕘</span>
+                        {{food.cookTime}}
+                    </div>
+                </div>
+                <!-- stars -->
+                <div class="stars">
+                    <app-star-rating [stars]="food.stars" />
+                </div>
+            </div>
+        </a>
+    </li>
+</ul>

@@ -1,0 +1,52 @@
+<app-title title="Cart Page" margin="1.5rem 0 0 2.5rem" fontSize="3rem" *ngIf="cart.items.length"></app-title>
+
+<app-not-found [visible]="!cart || !cart.items.length" notFoundMessage="Cart Is Empty!"
+    resetLinkText="Discover Our Menu" resetLinkRoute="/menu">
+</app-not-found>
+
+<div *ngIf="cart && cart.items.length" class="container-fluid">
+    <div class="row">
+        <div class="col-md-8 col-12 container">
+            <div class="row">
+                <ul>
+                    <li *ngFor="let item of cart.items">
+                        <div>
+                            <img src="{{item.food.imageUrl}}" alt="">
+                        </div>
+                        <div>
+                            <a routerLink="/food/{{item.food.id}}">
+                                <h1>{{item.food.name}}</h1>
+                            </a>
+                        </div>
+                        <div>
+                            <select #quantitySelect [value]="item.quantity"
+                                (change)="changeQuantity(item, quantitySelect.value)">
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                                <option>5</option>
+                            </select>
+                        </div>
+                        <div>
+                            <h1> {{item.price | currency}}</h1>
+                        </div>
+
+                        <div>
+                            <button class="remove-button" (click)="removeFromCart(item)">
+                                X
+                            </button>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class=" col-md-3 col-12 checkout">
+            <div>
+                <div class="foods-count">{{cart.totalCount}}</div>
+                <div class="total-price">{{cart.totalPrice|currency}}</div>
+            </div>
+            <a routerLink="/checkout">Proceed to Checkout</a>
+        </div>
+    </div>
+</div>

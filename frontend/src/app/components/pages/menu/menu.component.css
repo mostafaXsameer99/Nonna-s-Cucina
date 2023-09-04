@@ -1,0 +1,92 @@
+
+ul {
+    /* to center the elements of the ul  */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /* to make the cards go to new line when theres no more space in the screen  */
+    flex-wrap: wrap;
+    /* to remove the dot  */
+    list-style-type: none;
+
+    padding: 0;
+}
+
+/* the card  */
+li a {
+    height: 22rem;
+    width: 20rem;
+    border: 3px solid whitesmoke;
+    border-radius: 1rem;
+    margin: 0.5rem;
+    display: flex;
+    /* to make the elements of the card one under another  */
+    flex-direction: column;
+    /* to make the edges of the img has the bordere radius effect  */
+    overflow: hidden;
+    color: var(--red);
+}
+
+li:hover {
+    transform: translateY(-10px);
+    cursor: pointer;
+    /* transform: scale(10px); */
+}
+
+/* the size of image in the card  */
+li a img {
+    height: 14.5rem;
+    object-fit: cover;
+}
+
+.content {
+    margin-top: 0.3rem;
+    padding: 0.3rem 1rem;
+    position: relative;
+    height: 7rem;
+    font-size: 1.1rem;
+}
+
+.favorite {
+    position: absolute;
+    right: 1rem;
+    top: 0.2rem;
+    font-size: 1.2rem;
+}
+
+.favorite.not {
+    color: grey;
+}
+
+.stars {
+    margin-bottom: 0.2rem;
+    margin-top: 1rem;
+    margin-left: -0.7rem;
+
+}
+
+.product-item-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-top: 1rem;
+}
+
+.price {
+    color: var(--black);
+    font-size: 1.1rem;
+    font-weight: 800;
+}
+
+.cook-time {
+    font-size: 0.9rem;
+    /* flex: 3; */
+    text-align: right;
+}
+
+.name {
+    /* color: var(--black); */
+    font-size: 1.1rem;
+    font-weight: 800;
+}

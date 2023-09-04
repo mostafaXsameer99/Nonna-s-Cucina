@@ -1,0 +1,4 @@
+<div class="container">
+    <input #srch type="text" placeholder="Ask Nonna ..." (keyup.enter)="search(srch.value)" [value]="key">
+    <button (click)="search(srch.value)">Search</button>
+</div>
