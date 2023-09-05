@@ -29,7 +29,7 @@ app.get("/api/foods/tag/:tag", (req, res) => {
     res.send(foods);
 })
 
-app.get("/api/food/:foodID", (req, res) => {
+app.get("/api/foods/:foodID", (req, res) => {
     const foodId = req.params.foodID;
     const foods = sample_dishes.find(food => food.id == foodId);
     res.send(foods);

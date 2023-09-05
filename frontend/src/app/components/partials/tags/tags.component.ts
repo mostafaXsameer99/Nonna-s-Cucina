@@ -8,9 +8,11 @@ import { Tag } from 'src/app/shared/models/Tag';
   styleUrls: ['./tags.component.css']
 })
 export class TagsComponent {
-  tags:Tag[]=[]
+  tags: Tag[] = []
 
-  constructor(foodservice:FoodService){
-    this.tags=foodservice.getAllTags();
+  constructor(foodService: FoodService) {
+    foodService.getAllTags().subscribe(serverTags => {
+      this.tags = serverTags;
+    });
   }
 }
