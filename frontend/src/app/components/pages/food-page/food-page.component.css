@@ -96,7 +96,7 @@ img {
     content: "Price: ";
     color: darkgrey;
 }
-
+/* 
 button {
     color: white;
     background: var(--red);
@@ -110,4 +110,4 @@ button {
 button:hover {
     opacity: 0.9;
     cursor: pointer;
-}
+} */

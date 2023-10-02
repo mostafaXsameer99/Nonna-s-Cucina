@@ -235,3 +235,22 @@ export const sample_tags: Tag[] = [
 
 ]
 
+
+
+
+export const sample_users: any[] = [
+    {
+        name: "Mostafa Sameer",
+        email: "mostafa@gmail.com",
+        password: "12345",
+        address: "Asyut",
+        isAdmin: true,
+    },
+    {
+        name: "Farid Sameer",
+        email: "farid@gmail.com",
+        password: "12345",
+        address: "Asyut",
+        isAdmin: false,
+    },
+];
