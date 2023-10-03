@@ -2,60 +2,34 @@
     <div class="details">
         <app-title title="Register"></app-title>
         <form [formGroup]="registerForm" (ngSubmit)="submit()">
-            <div class="input-container">
-                <label>Name</label>
-                <div>
-                    <input type="text" placeholder="Name" formControlName="name">
-                </div>
-                <div class="error-list" *ngIf="fc.name.errors && isSubmitted">
-                    <div *ngIf="fc.name.errors.required">Name is required</div>
-                    <div *ngIf="fc.name.errors.minlength">too short</div>
-                </div>
+            <text-input [control]="fc.name" [showErrorsWhen]="isSubmitted" label="Name">
+                `</text-input>
 
-                <label>Email</label>
-                <div>
-                    <input type="email" placeholder="Email" formControlName="email">
-                </div>
-                <div class="error-list" *ngIf="fc.email.errors && isSubmitted">
-                    <div *ngIf="fc.email.errors.required">Email is required</div>
-                    <div *ngIf="fc.email.errors.email">Invalid email format</div>
-                </div>
-
-                <label>Password</label>
-                <div>
-                    <input type="password" placeholder="Password" formControlName="password">
-                </div>
-                <div class="error-list" *ngIf="fc.password.errors && isSubmitted">
-                    <div *ngIf="fc.password.errors.required">Password is required</div>
-                </div>
-
-                <label>Confirm Password</label>
-                <div>
-                    <input type="password" placeholder="Confirm Password" formControlName="confirmPassword">
-                </div>
-                <div class="error-list" *ngIf="fc.confirmPassword.errors && isSubmitted">
-                    <div *ngIf="fc.confirmPassword.errors.required">Confirm Password is required</div>
-                    <div *ngIf="fc.confirmPassword.errors.mustMatch">Passwords must match</div>
-                </div>
-
-                <label>address</label>
-                <div>
-                    <input type="text" placeholder="address" formControlName="address">
-                </div>
-                <div class="error-list" *ngIf="fc.address.errors && isSubmitted">
-                    <div *ngIf="fc.address.errors.required">address is required</div>
-                    <div *ngIf="fc.address.errors.minlength">too short</div>
-                </div>
-            </div>
+            <text-input [control]="fc.email" [showErrorsWhen]="isSubmitted" label="Email" type="email">
+                `</text-input>
 
 
-            <button class="myButton" type="submit">Register</button>
+            <text-input [control]="fc.password" [showErrorsWhen]="isSubmitted" label="Password" type="password">
+                `</text-input>
+
+            <text-input [control]="fc.confirmPassword" [showErrorsWhen]="isSubmitted" label="Confirm Password"
+                type="password">
+                `</text-input>
+
+            <text-input [control]="fc.address" [showErrorsWhen]="isSubmitted" label="Address">
+                `</text-input>
+
+
+            <default-button text="Register"></default-button>
+
             <div class="login">
                 Already a user? &nbsp;
                 <a routerLink="/login" [queryParams]="{returnUrl: returnUrl}">
                     Login Here
                 </a>
             </div>
+
+
         </form>
     </div>
 </div>

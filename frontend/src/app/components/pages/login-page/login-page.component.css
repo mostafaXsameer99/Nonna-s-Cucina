@@ -1,4 +1,4 @@
-/* .container {
+.container {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -7,7 +7,7 @@
 }
 
 .details {
-    width: 28rem;
+    width: 40rem;
 }
 
 form {
@@ -15,13 +15,13 @@ form {
     flex-direction: column;
     justify-content: center;
 }
-*/
+
 .error-list {
     color: red;
 }
 
-/* .register {
+.register {
     display: flex;
     justify-content: center;
     align-items: center;
-} */
+}

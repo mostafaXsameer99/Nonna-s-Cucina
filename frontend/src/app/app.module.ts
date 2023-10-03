@@ -22,6 +22,10 @@ import { LoadingComponent } from './components/partials/loading/loading.componen
 import { LoadingInterceptor } from './shared/interceptors/loading.interceptor';
 import { CheckoutPageComponent } from './components/pages/checkout-page/checkout-page.component';
 import { RouterModule } from '@angular/router';
+import { InputContainerComponent } from './components/partials/input-container/input-container.component';
+import { InputValidationComponent } from './components/partials/input-validation/input-validation.component';
+import { TextInputComponent } from './components/partials/text-input/text-input.component';
+import { DefaultButtonComponent } from './components/partials/default-button/default-button.component';
 
 
 @NgModule({
@@ -41,6 +45,10 @@ import { RouterModule } from '@angular/router';
     RegisterPageComponent,
     LoadingComponent,
     CheckoutPageComponent,
+    InputContainerComponent,
+    InputValidationComponent,
+    TextInputComponent,
+    DefaultButtonComponent,
   ],
   imports: [
     BrowserModule,
